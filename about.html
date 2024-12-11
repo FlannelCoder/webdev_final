@@ -1,0 +1,116 @@
+<!-- 
+Name: Adam Martin
+Date: 12/01/2024
+filename: about.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WeatherNova | About</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" type="image/png" href="images/LogoRound.png">
+    </head>
+    <body>
+        <header class="nonhome">
+            <br><h1 class="webtitle" style="font-size: xx-large; font-family: Exo; font-weight: bold;">WeatherNova</h1><br>
+            
+            <!-- Main Navigation Section -->
+            <nav>
+                <p class="navicon">
+                    <a id="link" href="index.html"><button id="link">Home</button></a>
+                    <a id="link" href="forecasting.html"><button id="link">Forecasting</button></a>
+                    <a id="link" href="analysis.html"><button id="link">Analysis</button></a>
+                    <a id="link" href="history.html" ><button id="link">History</button></a>
+                    <a id="link" href="about.html"><button id="link">About</button></a>
+                </p>
+                <button id='dm_button' src='scripts/script.js'><img style="filter: invert(1);" src='lightbulb.png' height="25px" width="25px"></button>
+            </nav>
+        </header>
+        <!-- Use the main area to add the main content to the webpage -->
+
+        <main>
+            <!-- Main Body Content Here -->
+            <hr class="rounded">
+            <section class="center">
+               <article>
+                   <h1 style="font-size: xx-large;">Background</h1>
+                   <p>
+                        WeatherNova was launched in January 2023, with the primary focus at the time being to provide no-hype, accurate, and reliable information on active tropical cyclones worldwide.
+                        Since then, over 200 videos have been uploaded in 2023 and 2024, covering most major tropical cyclones in each year.<br><br>
+
+                        Below is an example of the work done in these videos, covering Hurricanes John and Helene in September 2024: 
+                   </p>
+                   <figure>
+                        <h31 style="font-size: x-large; font-weight: bold;">Major Hurricane Helene on Final Approach to Florida; Catastrophic Rains Continue in Mexico</h3>
+                        <iframe class="yt" src="https://www.youtube-nocookie.com/embed/n56jDJTI07o?si=j7TBzre5QXbRhHgS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <figcaption style="font-size: small; text-align: center;">If the embed has failed, please <a href="https://www.youtube-nocookie.com/embed/n56jDJTI07o?si=j7TBzre5QXbRhHgS">click here</a></figcaption>
+                   </figure>
+                   <hr class="rounded">
+                   <h1 style="font-size: xx-large;">Looking Forward: 2025</h1>
+                   <p>
+                        As 2024 comes to a close and 2025 begins, the aim of WeatherNova remains unchanged. WeatherNova will continue to provide the same videos it has over the past 2 years, alongside some venturing into new projects.<br><br>
+
+                        In mid-2023, a new aspect of WeatherNova begun, creating easy-to-understand plots for historical analysis, realtime analysis, and forecasts.
+                        This part is continuing to grow, and is now being brought public in the form of a Discord bot. The aim of the Discord bot is to give users greater access to the plots created by WeatherNova.
+                        More plots will be created, and if you have any feedback or suggestions for plots seen on this site or to be made, please leave them in the form below.<br><br>
+
+                        Looking long-term, the goal is to be able to bring created plots to a wider audience via the web, alongside creating a full website to host a WeatherNova blog, alongside the usual videos of course.
+                   </p>
+                   <hr class="rounded">
+                   <h1 style="font-size: xx-large;">Contact</h1>
+                   <p>
+                        Feedback is always welcomed, if you have feedback on any plots shown on this site or suggestions for future plots to create, feel free to fill out the form below.<br>
+                        Or if you'd like to get in touch directly, you can via the email below:
+                        <address>
+                            Contact @ <a href="mailto:weathernovateam@gmail.com">weathernovateam@gmail.com</a>
+                        </address>
+                   </p>
+                   <form>
+                    <h1 style="font-size: xx-large; text-decoration: underline;">Feedback Form</h1>
+                    <label>Please select one or more of the following:<br>Which type of feedback are you giving?</label><br>
+                    <input type="checkbox" value="feedback">
+                    <label for="feedback">General Feedback</label><br>
+                    
+                    <input type="checkbox" value="suggestion">
+                    <label for="suggestion">Suggestion</label><br><br>
+
+
+                    <label>Have you used the commands via the WeatherNova Discord bot?</label><br>
+                    <input type="radio" id="true" name="discord?" value="true">
+                    <label for="true">Yes</label><br>
+                    <input type="radio" id="false" name="discord?" value="false">
+                    <label for="false">No</label><br><br>
+
+
+                    <label>What is your favorite plot?</label><br>
+                    <select name="favorite" id="favorite">
+                        <option value="none">None</option>
+                        <option value="sst_maps">Sea Surface Temp. Maps</option>
+                        <option value="cone">Forecast Cones</option>
+                        <option value="mcd">Mesoscale Discussions</option>
+                        <option value="nhc_two">NHC Tropical Weather Outlooks</option>
+                        <option value="spc_otk">SPC Convective Outlooks</option>
+                        <option value="wpc_otk">WPC Rainfall Outlooks</option>
+                        <option value="season_analysis">Seasonal Hurricane Analysis</option>
+                        <option value="single_analysis">Single Hurricane Analysis</option>
+                        <option value="single_analysis">Single Hurricane Analysis</option>
+                        <option value="wind-pressure_relation">Wind/Pressure Relationship Graph</option>
+                        <option value="degrees">Sea Surface Temp. Deviation Maps</option>
+                    </select><br><br>
+
+                    <label for="feedback_box">Please enter your feedback/suggestion:</label><br>
+                    <textarea name="feedback_box" rows="10" cols="50" maxlength="500">Text here...</textarea><br>
+                    <button type="submit" onclick="alert('Your feedback/suggestion has been submitted! Thank you!')">Submit</button>
+                  </form> 
+                </article>
+            </section>
+        </main>
+        <footer>
+            <p style="text-align: center;">&copy; Copyright WeatherNova 2024</p>
+        </footer>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,176 @@
+<!-- 
+Name: Adam Martin
+Date: 12/01/2024
+filename: forecasting.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WeatherNova | Forecasting Tools</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" type="image/png" href="images/LogoRound.png">
+    </head>
+    <body>
+        <header class="nonhome">
+            <br><h1 class="webtitle" style="font-size: xx-large; font-family: Exo; font-weight: bold;">WeatherNova</h1><br>
+            
+            <!-- Main Navigation Section -->
+            <nav>
+                <p class="navicon">
+                    <a id="link" href="index.html"><button id="link">Home</button></a>
+                    <a id="link" href="forecasting.html"><button id="link">Forecasting</button></a>
+                    <a id="link" href="analysis.html"><button id="link">Analysis</button></a>
+                    <a id="link" href="history.html" ><button id="link">History</button></a>
+                    <a id="link" href="about.html"><button id="link">About</button></a>
+                </p>
+                <button id='dm_button' src='scripts/script.js'><img style="filter: invert(1);" src='lightbulb.png' height="25px" width="25px"></button>
+            </nav>
+        </header>
+        <!-- Use the main area to add the main content to the webpage -->
+
+        <main>
+            <!-- Main Body Content Here -->
+            <hr class="rounded">
+            <section class="center">
+               <article>
+                   <h1 style="font-size: xx-large;">Forecasting Tools</h1>
+                   <p>
+                       A very important part of meteorology is forecasting the weather. The National Hurricane Center (NHC) has done an incredible job at public messaging over the past few decades.
+                       WeatherNova focuses primarily in Tropical Cyclones, and so a goal was set out in mid-2023 to create products that can communicate a tropical cyclones expected path, how strong it could get,
+                       and most importantly, where the storm may go.
+                   </p>
+                   <hr class="rounded">
+                   <h1 style="font-size: xx-large;">Forecast Cone</h1>
+                   <p>
+                        The first step was a forecast cone, which the NHC has used for ages in their official forecasts.
+                        Below are two forecast cones for Tropical Storm Milton in October 2024. On the top, the 4pm CDT Oct. 5th official forecast cone produced by the NHC
+                        and on the bottom, the same forecast put into the WeatherNova cone. 
+                   </p>
+                   <figure id="forecasting_fig" class="center">
+                        <div>
+                            <img class="fig" src="milton.png">
+                            <img class="fig" src="images/Cone.png">
+                        </div>
+                   </figure>
+                   <p>
+                        There are noticable differences between the products made by WeatherNova and the NHC, however, the general design remains consistent. The goal is not to fully copy the NHCs products.
+                        There are several reasons for this, misinformation is a significant issue across the web worldwide right now, and by making the product look different from the NHC, it decreases the chance
+                        that any reader may take any unofficial forecasts made as official.
+                        <br><br>
+                        For the most part, publically, these products would be released using official NHC data, as the goal is to give readers a better understanding of how strong a storm could get but also
+                        where the storm may track in a 5-day period. Compared to the NHC forecast, the forecast points are instead colored to match a given Saffir-Simpson Hurricane Wind Scale (SSHWS) category, 
+                        hopefully to convey more effectively to the reader how strong a storm could get prior to landfall.
+                    </p>
+                    <hr class="rounded">
+               </article>
+           </section>
+           <section class="center">
+                <article>
+                    <h1 style="font-size: xx-large;">How Does It Work?</h1>
+                    <p>
+                        Most programs in this section work primarily off of a Microsoft Excel spreadsheet. Below is an example of the data usually inputted for the program to read.
+                    </p>
+                    <table class="center">
+                        <tr>
+                            <th>Forecast Hour</th>
+                            <th>Latitude (°)</th>
+                            <th>Longitude (°)</th>
+                            <th>Intensity (kt)</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <th>0</th>
+                            <td>22.7</td>
+                            <td>-95.5</td>
+                            <td>65</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>12</th>
+                            <td>22.9</td>
+                            <td>-95</td>
+                            <td>45</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>24</th>
+                            <td>23</td>
+                            <td>-94.1</td>
+                            <td>35</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>36</th>
+                            <td>23</td>
+                            <td>-92.8</td>
+                            <td>30</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <th>48</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>-1</td>
+                        </tr>
+                    </table>
+                    <p>
+                        Where Forecast Hour is the time (from the initial point) in the forecast<br>
+                        Latitude is the latitude (in °) of the storm at any given forecast point<br>
+                        Longitude is the longitude (in °) of the storm at any given forecast point<br>
+                        Intensity is how strong the storm is (in knots)<br>
+                        Status marks what type of system it is:<br>0 = Tropical Cyclone<br>1 = Subtropical Cyclone<br>2 = Low<br>3 = Non-Tropical Low<br>-1 = Remove the point<br>
+                        These status marks dictate colors on each forecast point, but also can allow customization on how long a forecast is, rather than being only limited to a 5-day forecast.
+                    </p>
+                    <hr class="rounded">
+            </article>   
+           </section>
+           <section class="center">
+                <article>
+                    <h1 style="font-size: xx-large;">Mesoscale Discussions</h1>
+                    <p>
+                        Forecast cones are great to have, however, a detailed forecast often takes hours to create. This leaves room for rapid changes in a tropical cyclone, some of those cases may be important for life and property.
+                        The Storm Prediction Center (SPC) has a product called the Mesoscale Discussion. During severe weather events, several of these can be issued at any time by forecasters, outlining current trends, and life-saving information that may need quick action.
+                    </p>
+                    <figure class="center">
+                        <img class="fig" src="images/spc.png">
+                        <figcaption>SPC Mesoscale Discussion #392 Issued March 31st, 2023</figcaption>
+                    </figure>
+                    <p>
+                        This specific mesoscale discussion shown was outlining a change they were making to their daily Convective Outlook, highlighting a region in Arkansas, Tennessee, and Mississippi in which tornadoes were increasingly likely on March 31st, 2023.
+                        The NHC does not have a mesoscale discussion product, rather they have a Tropical Cyclone Update (TCU) product which can be issued at anytime with a fully updated graphical suite. However, this still encounters the lasting issue of time, it takes time to create the new graphical suite.
+
+                        So, the idea was born to try to create some form of a mesoscale discussion but for tropical cyclones.
+                    </p>
+                    <figure class="center">
+                        <img class="fig" src="images/mesoscale.png">
+                        <figcaption>Experimental WeatherNova Mesoscale Discussion on Tropical Storm Beryl in June 2024</figcaption>
+                    </figure>
+                    <p>
+                        In the figure above, an experimental mesoscale discussion is seen for Tropical Storm Beryl in June of 2024.
+                        This was following signs of Tropical Storm Beryl increasing in organization, and preparing to intensify rapidly as it neared the Lesser Antilles islands.
+                        Later that night, into June 30th, Beryl rapidly intensified from a Tropical Storm to a Category 4 hurricane, and Beryl remained at Category 4 intensity as it passed through the Lesser Antilles on July 1st.<br><br>
+                        This highlights the ability to act fast on on-going trends with a tropical cyclone, and may be particularly useful for storms near land, such as Hurricane Otis in October 2023 when it rapidly intensified into a Category 5 hurricane and struck Acapulco, Mexico at that strength following an immense model guidance failure, missing Otis' rapid intensification phase.
+                        These products are still being worked on to make them better, and feedback is always appreciated. If you'd like to leave feedback on any of the products listed here, please fill out the form <a href="about.html">here.</a>
+                    </p>
+                </article>
+           </section>
+            <hr class="rounded">
+            <br>
+           <section class="center">
+                <div>
+                    <a href="index.html"><button id="section_link" style="vertical-align:middle; background:url(images/planet.png); background-position-x: center; background-position-y: center; padding: 40px 40px; margin: auto;"><span>Return Home</span></button></a>
+                    <h1 style="text-align: center; font-family: Exo; font-weight: bold; padding: 1px 1px; transition: 1s; margin-top: 3%;">Or select another page up top</h1>
+                </div>
+           </section>
+            <hr class="rounded">
+        </main>
+        <footer>
+            <p style="text-align: center;">&copy; Copyright WeatherNova 2024</p>
+        </footer>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,518 @@
+/* 
+Name: Adam Martin
+Date: 12/01/2024
+filename: styles.css
+/*
+
+/* CSS Reset */
+body, header, nav, main, footer, img, h1, h3, ul, aside, figure, figcaption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+footer {
+    font-family: Exo;
+}
+
+/* Default background color */
+body {
+    background-color: white;
+    color: black;
+
+    display: grid;
+}
+
+/* Background color if darkmode is enabled */
+.dark-mode {
+    background-color: #0b011c;
+    color: white;
+}
+
+/* Website title settings */
+.webtitle {
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px black;
+}
+
+/* For (most) mobile devices */
+@media screen and (max-width:767px) {
+    /* Header settings */
+    .desk-tab {
+        display: none;
+    }
+
+    header{
+
+        /* Header image settings */
+        background-image: url(headerpic.png);
+        background-position-x: center;
+        background-position-y: center;
+        background-size: 100%;
+
+        /* Height/width settings */
+        height: 125px;
+        width: auto;
+
+        /* Navigation section */
+        .navicon {
+            /* Display settings */
+            display: flex;
+            justify-content: center;
+
+            /* Font settings + shadow */
+            text-shadow: 2px 2px black;
+            background-color: rgba(42, 42, 42, 0.5);
+            font-family: Exo;
+
+            /* Navigation buttons */
+            #link, #link:visited, #link:link{
+                /* Display settings */
+                display: block;
+                width: 100%;
+                cursor: pointer;
+
+                /* Coloring/Shading */
+                background-color: rgba(0, 0, 0, 0);
+                text-shadow: 2px 2px black;
+                color: white;
+
+                /* Font Settings */
+                text-decoration: none;
+                font-size: 25px;
+                font-weight: bold;
+
+                /* Border */
+                border-radius: 10%;
+                border: none;
+            }
+            /* Navigation buttons if hovered over */
+            #link:hover {
+                background-color: rgba(0,0,0,0.5);
+            }
+        }
+    }
+
+    /* Sticks the header to the top for non-home pages */
+    .nonhome {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+
+    /* Darkmode button settings */
+    #dm_button {
+        /* Display settings */
+        display: block;
+        float: right;
+        /* Colors */
+        background-color: #0b011c;
+        border: 2px solid white;
+
+        /* Positional settings */
+        padding: 12px 15px;
+        padding: 12.5px 12.5px;
+        margin: 0% 1%;
+        transform: translatey(-220%);
+
+        /* Misc. Settings */
+        transition-duration: 0ms;
+        cursor: pointer;
+    }
+
+    #dm_button:hover{
+        background-color: black;
+    }
+
+    .sticky {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+
+    /* Index nav box code */
+    #section_link{
+        color: white;
+        padding-block: 60px 60px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: Exo;
+        width: 100%;
+        text-shadow: 3px 3px black;
+        border: 2px solid #0b011c;
+        position: relative;
+        overflow: hidden;
+        border-radius: 5%;
+    }
+
+    #section_link span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 1s;
+    }
+
+    #section_link span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: 15%;
+        transition: 1s;
+    }
+
+    #section_link:hover span {
+        padding-right: 7.5%;
+    }
+
+    #section_link:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    /* Section settings */
+    section {
+        /* Display settings */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: Exo;
+        /* Padding */
+        padding-right: 2%;
+        padding-left: 2%;
+        padding-bottom: 2%;
+    }
+
+    section img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    /* Figures */
+    figure {
+        padding: 5%;
+        max-width: 75%;
+        margin: 0;
+        img.fig {
+            border: 3px solid black;
+            border-radius: 5%;
+        }
+    }
+
+    #forecasting_fig {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Article settings */
+    article, article p, article h1{
+        /* Padding */
+        margin-left: 2%;
+        margin-right: 2%;
+        padding-top: 2%;
+        padding-bottom: 1%;
+
+        overflow-wrap: break-word;
+
+        /* Font stuff */
+        font-size: 20px;
+        font-family: Exo;
+        font-size-adjust: initial;
+    }
+
+    table {
+        display: table;
+        tr, th, td {
+            border: 2px solid;
+            padding: 15px;
+        }
+        
+    }
+
+    /* Testing center settings */
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Rounded <hr> border */
+    hr.rounded {
+        border-top: 5px solid whitesmoke;
+        border-radius: 2px;
+        max-width: 100%;
+        margin: auto;
+    }
+
+    ol {
+        display: table;
+        justify-content: center;
+        text-align: left;
+        margin: auto;
+        
+        li {
+            list-style-type: circle;
+        }
+    }
+
+    form {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        border: 2px solid;
+        border-radius: 5%;
+        label, input {
+            margin-top: 1%;
+            margin-bottom: 1%;
+        }
+    }
+
+    .yt {
+        width:420px;
+        height:420px;
+    }
+}
+
+/* For desktop and tablets */
+@media screen and (min-width:768px) {
+    /* Header settings */
+    header{
+
+        /* Header image settings */
+        background-image: url(headerpic.png);
+        background-position-x: center;
+        background-position-y: center;
+        background-size: 100%;
+
+        /* Height/width settings */
+        height: 125px;
+        width: auto;
+
+        /* Navigation section */
+        .navicon {
+            /* Display settings */
+            display: flex;
+            justify-content: center;
+
+            /* Font settings + shadow */
+            text-shadow: 2px 2px black;
+            background-color: rgba(42, 42, 42, 0.5);
+            font-family: Exo;
+
+            /* Navigation buttons */
+            #link, #link:visited, #link:link{
+                /* Display settings */
+                display: block;
+                width: 100%;
+                cursor: pointer;
+
+                /* Coloring/Shading */
+                background-color: rgba(0, 0, 0, 0);
+                text-shadow: 2px 2px black;
+                color: white;
+
+                /* Font Settings */
+                text-decoration: none;
+                font-size: 25px;
+                font-weight: bold;
+
+                /* Border */
+                border-radius: 10%;
+                border: none;
+            }
+            /* Navigation buttons if hovered over */
+            #link:hover {
+                background-color: rgba(0,0,0,0.5);
+            }
+        }
+    }
+
+    /* Sticks the header to the top for non-home pages */
+    .nonhome {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+
+    /* Darkmode button settings */
+    #dm_button {
+        /* Display settings */
+        display: block;
+        float: right;
+        /* Colors */
+        background-color: #0b011c;
+        border: 2px solid white;
+
+        /* Positional settings */
+        padding: 12px 15px;
+        padding: 12.5px 12.5px;
+        margin: 0% 1%;
+        transform: translatey(-220%);
+
+        /* Misc. Settings */
+        transition-duration: 0ms;
+        cursor: pointer;
+    }
+
+    #dm_button:hover{
+        background-color: black;
+    }
+
+    .sticky {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+
+    /* Index nav box code */
+    #section_link{
+        color: white;
+        padding: 160px 40px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: Exo;
+        cursor: pointer;
+        width: 100%;
+        text-shadow: 3px 3px black;
+        border: 2px solid #0b011c;
+        position: relative;
+        overflow: hidden;
+        border-radius: 5%;
+    }
+
+    #section_link span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 1s;
+    }
+
+    #section_link span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: 15%;
+        transition: 1s;
+    }
+
+    #section_link:hover span {
+        padding-right: 7.5%;
+    }
+
+    #section_link:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    /* Section settings */
+    section {
+        /* Display settings */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: Exo;
+        /* Padding */
+        padding-right: 2%;
+        padding-left: 2%;
+        padding-bottom: 2%;
+    }
+
+    section img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    /* Figures */
+    figure {
+        padding: 5%;
+        max-width: 75%;
+        margin: 0;
+        img.fig {
+            border: 3px solid black;
+            border-radius: 5%;
+        }
+    }
+
+    #forecasting_fig {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Article settings */
+    article, article p, article h1{
+        /* Padding */
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 2%;
+        padding-bottom: 1%;
+
+        overflow-wrap: break-word;
+
+        /* Font stuff */
+        font-size: 20px;
+        font-family: Exo;
+        font-size-adjust: initial;
+    }
+
+    table {
+        display: table;
+        tr, th, td {
+            border: 2px solid;
+            padding: 15px;
+        }
+        
+    }
+
+    /* Testing center settings */
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Rounded <hr> border */
+    hr.rounded {
+        border-top: 5px solid whitesmoke;
+        border-radius: 2px;
+        max-width: 100%;
+        margin: auto;
+    }
+
+    ol {
+        display: table;
+        justify-content: center;
+        text-align: left;
+        margin: auto;
+        
+        li {
+            list-style-type: circle;
+        }
+    }
+
+    form {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        border: 2px solid;
+        border-radius: 5%;
+        label, input {
+            margin-top: 1%;
+            margin-bottom: 1%;
+        }
+    }
+
+    .yt {
+        width:1280px;
+        height:720px;
+    }
+}

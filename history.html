@@ -1,0 +1,103 @@
+<!-- 
+Name: Adam Martin
+Date: 12/01/2024
+filename: history.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WeatherNova | Hisotrical Analysis</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" type="image/png" href="images/LogoRound.png">
+    </head>
+    <body>
+        <header class="nonhome">
+            <br><h1 class="webtitle" style="font-size: xx-large; font-family: Exo; font-weight: bold;">WeatherNova</h1><br>
+            
+            <!-- Main Navigation Section -->
+            <nav>
+                <p class="navicon">
+                    <a id="link" href="index.html"><button id="link">Home</button></a>
+                    <a id="link" href="forecasting.html"><button id="link">Forecasting</button></a>
+                    <a id="link" href="analysis.html"><button id="link">Analysis</button></a>
+                    <a id="link" href="history.html" ><button id="link">History</button></a>
+                    <a id="link" href="about.html"><button id="link">About</button></a>
+                </p>
+                <button id='dm_button' src='scripts/script.js'><img style="filter: invert(1);" src='lightbulb.png' height="25px" width="25px"></button>
+            </nav>
+        </header>
+        <!-- Use the main area to add the main content to the webpage -->
+
+        <main>
+            <!-- Main Body Content Here -->
+            <hr class="rounded">
+            <section class="center">
+               <article>
+                   <h1 style="font-size: xx-large;">Historical Analysis</h1>
+                   <p>
+                        A big part of meteorology is looking back at history to get an idea of what current-year patterns may bring in the coming days, weeks, or months.
+                        Alongside realtime analysis plots, historical plots have been created to take a look back at history, not only for forecasting, but also for research purposes.<br><br>
+                        Firstly, the Sea Surface Temperature (SST) and Sea Surface Temperature Anomaly (SSTA) plots shown in <a href="analysis.html">realtime analysis</a> are compatible with historical analysis.
+                        This allows users to view historical SST patterns and from there can create seasonal analogs for forecasts.
+                   </p>
+                   <hr class="rounded">
+                   <h1 style="font-size: xx-large;">Seasonal Analysis</h1>
+                   <figure class="center">
+                        <img class="fig" src="images/season.png" alt="2017 Atlantic Hurricane Season Analysis">
+                        <figcaption>2017 Atlantic Hurricane Season Analysis</figcaption>
+                   </figure>
+                   <hr class="rounded">
+                   <h1 style="font-size: xx-large;">Hurricane Analysis</h1>
+                   <p>
+                        In the figure above, a seasonal analysis map of the <a href="https://www.noaa.gov/media-release/extremely-active-2017-atlantic-hurricane-season-finally-ends" target="_blank">2017 Atlantic Hurricane Season</a> is shown.
+                        These are brand new maps, with the program for these being written only a couple of weeks ago. This new program sifts through NOAAs HURDAT database and based on user requests can plot any singular storm or hurricane season dating back to 1851.<br><br>
+                        These maps are particularly helpful when looking for hurricane season analogs, and getting an idea, from historical standpoints where hurricane season activity could be elevated in any given year. Alongside that,
+                        it is also fascinating to take a look back and see historical hurricane seasons such as 2017.
+                   </p>
+                   <figure class="center">
+                    <img class="fig" src="images/chart.png" alt="Hurricane Lee (2023) Wind/Pressure Relationship Chart">
+                    <figcaption>Hurricane Lee (2023) Wind/Pressure Relationship Chart</figcaption>
+                    </figure>
+                    <p>
+                        Another fascinating historical aspect to look at is the relationship between wind and pressure within hurricanes.
+                        In the figure shown above, a graph plotting Hurricane Lees (2023) wind and pressure throughout its lifetime is shown.
+                        Graphs like these are not only fascinating to look at, especially in storms such as Hurricane Patricia (2015) and Hurricane Wilma (2005), but also can be used for historical research.<br><br>
+                    </p>
+                    <hr class="rounded">
+                    <h1 style="font-size: xx-large;">Ocean Analysis</h1>
+                    <p>
+                        One final plot to show for historical analysis is a look at how certain years deviated from set year averages in history.
+                        Similar to how Sea Surface Temperature Anomaly (SSTA) maps show yearly deviation, this new deviation plot takes in a select few years, and calculates the deviation of the desired year from the given set.
+                    </p>
+                    <figure class="center">
+                        <img class="fig" src="images/deviation.png" alt="2024 August-September-October Global SST Deviation">
+                        <figcaption>2024 August-September-October Global SST Deviation from active hurricane seasons since 1991</figcaption>
+                    </figure>
+                    <p>
+                        In the example above, the August-September-October global Sea Surface Temperature deviation is shown, 
+                        and the comparison dataset here is years since 1991 where the Atlantic Hurricane Season ended with >=140 units of <a href="https://www.cpc.ncep.noaa.gov/products/outlooks/hurricane2003/August/background_information.html" target="_blank">Accumulated Cyclone Energy</a> (ACE).<br><br>
+
+                        This deviation plot alongside the wind-pressure relationship graph will soon be available via the WeatherNova Discord bot.<br>
+                        Feedback is always appreciated, if you'd like to leave feedback on any of the products listed here and/or suggest any future products, please fill out the form <a href="about.html">here.</a>
+                    </p>
+                </article>
+            </section>
+            <hr class="rounded">
+            <br>
+            <section class="center">
+                <div>
+                    <a href="index.html"><button id="section_link" style="vertical-align:middle; background:url(images/planet.png); background-position-x: center; background-position-y: center; padding: 40px 40px; margin: auto;"><span>Return Home</span></button></a>
+                    <h1 style="text-align: center; font-family: Exo; font-weight: bold; padding: 1px 1px; transition: 1s; margin-top: 3%;">Or select another page up top</h1>
+                </div>
+            </section>
+            <hr class="rounded">
+        </main>
+        <footer>
+            <p style="text-align: center;">&copy; Copyright WeatherNova 2024</p>
+        </footer>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>

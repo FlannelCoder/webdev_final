@@ -1,0 +1,129 @@
+<!-- 
+Name: Adam Martin
+Date: 12/01/2024
+filename: analysis.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WeatherNova | Realtime Analysis</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" type="image/png" href="images/LogoRound.png">
+    </head>
+    <body>
+        <header class="nonhome">
+            <br><h1 class="webtitle" style="font-size: xx-large; font-family: Exo; font-weight: bold;">WeatherNova</h1><br>
+                
+            <!-- Main Navigation Section -->
+            <nav>
+                <p class="navicon">
+                    <a id="link" href="index.html"><button id="link">Home</button></a>
+                    <a id="link" href="forecasting.html"><button id="link">Forecasting</button></a>
+                    <a id="link" href="analysis.html"><button id="link">Analysis</button></a>
+                    <a id="link" href="history.html" ><button id="link">History</button></a>
+                    <a id="link" href="about.html"><button id="link">About</button></a>
+                </p>
+                <button id='dm_button' src='scripts/script.js'><img style="filter: invert(1);" src='lightbulb.png' height="25px" width="25px"></button>
+            </nav>
+        </header>
+        <!-- Use the main area to add the main content to the webpage -->
+
+        <main>
+            <!-- Main Body Content Here -->
+            <hr class="rounded">
+            <section class="center">
+                <div>
+               <article>
+                   <h1 style="font-size: xx-large;">Realtime Analysis</h1>
+                   <p>
+                        Being able to analyze data in realtime is important, one of the main focuses of WeatherNova is to provide realtime analysis plots that are easy to understand but also easy to access for users.
+                        Some examples will be shown here, though there is a growing list of available plots to generate. These include:
+                   </p>
+                   <ol>
+                        <li>Global Sea Surface Temperature (SST) Maps</li>
+                        <li>Global Sea Surface Temperature Anomaly (SSTA) Maps</li>
+                        <li>Global Oceanic Heat Content Map</li>
+                        <li><a href="https://www.nhc.noaa.gov" target="_blank">National Hurricane Center</a> (NHC) Tropical Weather Outlooks</li>
+                        <li><a href="https://www.spc.noaa.gov" target="_blank">Storm Prediction Center</a> (SPC) Convective Outlooks</li>
+                        <li><a href="https://www.wpc.ncep.noaa.gov" target="_blank">Weather Prediction Center</a> (WPC) Excessive Rainfall Outlooks</li>
+                        <li><a href="https://www.cpc.ncep.noaa.gov" target="_blank">Climate Prediction Centerr</a> (CPC) Tropical Weather Outlooks</li>
+                   </ol>
+                   <p>
+                        All the plots listed are available on the WeatherNova Discord bot.
+                   </p>
+                </article>
+                <hr class="rounded">
+                <article>
+                    <h1 style="font-size: xx-large">Global Sea Surface Temperature Maps</h1>
+                    <p>
+                        Sea Surface Temperatures (SSTs) are one of the most important factors in realtime analysis. There's several reasons for this,
+                        Firstly, in relation to tropical cyclones, warm water is a tropical cyclones fuel, without warm water tropical cyclones cannot exist.
+                        Secondly, SST patterns tend to influence most of the weather across the world, as these patterns tend to take longer to change than patterns
+                        over land.
+                    </p>
+                    <figure class="center">
+                        <img class="fig" src="images/globalsst.png" alt="Global Sea Surface Temperature (SST) map">
+                        <figcaption>North Atlantic SST map for July 29th, 2024</figcaption>
+                    </figure>
+                    <p>
+                        The example shown above is the SST analysis map (OISSTv2.1) for July 29th, 2024. This map shows SST, as analyzed, in degrees Celsius.
+                        SST maps are excellent to see exactly how much fuel is available for tropical cyclones, though it isn't the best to see how warm waters are relative to average.
+                    </p>
+                    <figure class="center">
+                        <img  class="fig" src="images/ssta.png" alt="Global Sea Surface Temperature Anomaly (SSTA) map">
+                        <figcaption>Global SSTA map for August 4th, 2024</figcaption>
+                    </figure>
+                    <p>
+                        In this example, we now show the departure from average (1971-2000 Climatology) to get a reference of how warm/cold relative to average SST patterns are.
+                        This can help forecasters see what patterns are in place now, and compare each pattern historically to make more accurate predictions.<br><br>
+
+                        Both of these maps are available on the WeatherNova Discord bot, through the $sst [region] and $ssta [region] commands. It is customizable, primarily with the location.
+                        As seen with the SST graphic, it is possible to select specific regions for these maps, for more info please view the documentation or simply input the command $help in Discord.<br><br>
+
+                        In future, the goal is to have each plot shown here available for free online, though for now we're sticking to a simple Discord bot.
+                    </p>
+                    <hr class="rounded">
+                    <h1 style="font-size: xx-large">NOAA Maps</h1>
+                    <p>
+                        Along the SST/SSTA maps available, various maps created by branches of NOAA are also available for easy plotting via the WeatherNova Discord bot.<br>
+                        Firstly, the National Hurricane Center (NHC) Tropical Weather Outlooks (TWOs) which shows active tropical cyclones, but also highlights areas of potential tropical cyclone formation.
+                        These maps can be plotted simply by the command $two [region], where [region] can be any basin across the world.
+                    </p>
+                    <figure class="center">
+                        <img class="fig" src="images/nhc.png" alt="NHC Tropical Weather Outlook">
+                        <figcaption>NHC Tropical Weather Outlook on September 27th, 2024</figcaption>
+                    </figure>
+                    <p>
+                        The Storm Prediction Center (SPC) issues regular Convective Outlooks highlighting areas of severe weather potential and the magnitude of the threat ranging from a Level 1/5 Marginal Risk to a Level 5/5 High Risk.<br>
+                        These can be plotted simply by using the command $spc [day] where [day] is just the convective outlook day the user requests.
+                    </p>
+                    <figure class="center">
+                        <img class="fig" src="images/spco.png" alt="SPC Convective Outlook">
+                        <figcaption>SPC Convective Outlook for May 6th, 2024</figcaption>
+                    </figure>
+                    <p>
+                        The plots shown here are only a select few of all available realtime analysis plots, more are available on the WeatherNova Discord bot. To see all available commands, see the $help command.<br>
+                        Feedback is always appreciated, if you'd like to leave feedback on any of the products listed here and/or suggest any future products, please fill out the form <a href="about.html">here.</a>
+                    </p>
+                </article>
+                </div>
+            </section>
+            <hr class="rounded">
+            <br>
+            <section class="center">
+                <div>
+                    <a href="index.html"><button id="section_link" style="vertical-align:middle; background:url(images/planet.png); background-position-x: center; background-position-y: center; padding: 40px 40px; margin: auto;"><span>Return Home</span></button></a>
+                    <h1 style="text-align: center; font-family: Exo; font-weight: bold; padding: 1px 1px; transition: 1s; margin-top: 3%;">Or select another page up top</h1>
+                </div>
+            </section>
+            <hr class="rounded">
+        </main>
+        <footer>
+            <p style="text-align: center;">&copy; Copyright WeatherNova 2024</p>
+        </footer>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>
